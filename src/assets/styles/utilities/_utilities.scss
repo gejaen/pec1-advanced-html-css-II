@@ -1,0 +1,102 @@
+// Text Sizes (Map) ------ 
+
+$txt-sizes: (
+    1: $font-sz1, 
+    2: $font-sz2, 
+    3: $font-sz3, 
+    4: $font-sz4, 
+    5: $font-sz5, 
+    6: $font-sz6, 
+    7: $font-sz7, 
+    8: $font-sz8
+);
+
+/* text sizes */
+@each $name, $size in $txt-sizes  {
+    .tx-sz#{$name} {font-size:$size;} 
+}
+
+
+/* text transform */
+.tx-neg {
+  background-color:$color-main;
+  color: $color-light;
+}
+
+.tx-center {
+  text-align: center;
+}
+
+
+/* colors */
+
+.co-bg-grey {
+  background-color: var(--color-grey)
+}
+
+.co-bg-grey-light {
+  background-color: var(--color-grey-light)
+}
+
+
+/* flex */
+.fx {
+  display: flex;
+}
+
+.fx-center {
+  justify-content: center;
+}
+
+
+/* image boxes aspect ratios */
+.img-cover {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 0;
+
+  img {
+    display: none;
+  }
+
+  &.img-1to1 {
+    padding-top: 100%;
+  }
+  
+  &.img-2to1 {
+    padding-top: 50%;
+  }
+  
+  &.img-16to9 {
+    padding-top: 56.25%;
+  }
+  
+  &.img-4to3 {
+    padding-top: 75%;
+  }
+
+  .overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top:0;
+    display: none;
+    //display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.7);
+    color:#ffffff;
+    text-align: center;
+  }
+
+  &:hover,
+  &:active {
+    .overlay {
+      display:flex;
+      cursor: none;
+    }
+  }
+}
+

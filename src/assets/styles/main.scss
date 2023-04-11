@@ -1,0 +1,42 @@
+/**
+ * Use this file to import partials.
+ * Do not include SCSS code in this file.
+ */
+
+/**
+ * Import variables
+ */
+
+@import "variables";
+
+/**
+ * Import npm dependencies
+ * see: https://v2.parceljs.org/features/module-resolution/
+ * see commented examples below
+ */
+
+//$fa-font-path: "/node_modules/@fortawesome/fontawesome-free/webfonts" !default;
+//@import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+//@import "node_modules/@fortawesome/fontawesome-free/scss/regular";
+@import "node_modules/normalize-scss/sass/normalize";
+
+// @import "some-node-module";
+// @import "@some-company/some-node-module";
+
+
+/**
+ * Import layouts
+ * It's a best practice to use a different partial for each page
+ */
+@import "utilities/mixins";
+@import "utilities/base";
+@import "utilities/space";
+@import "utilities/grid";
+@import "utilities/utilities";
+@import "utilities/components";
+
+//@import "layouts/home";
+
+/**
+ * Do NOT include anything else in this file!
+ */

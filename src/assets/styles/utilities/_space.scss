@@ -1,0 +1,420 @@
+/*
+Naming
+
+Padding and Margin
+
+p = padding
+m = margin
+
+0 = none
+x = left + right
+y = top + bottom
+t = top
+b = bottom
+r = right
+l = left
+c = center
+
+example: .p-x1-sm {}
+example negative .p-x-1-sm{}
+
+
+sm = for small breakpoint
+md = for medium breakpoint
+
+
+
+*/
+
+
+
+// map
+$map-space: (
+  1: $sp-1,
+  2: $sp-2,
+  3: $sp-3,
+  4: $sp-4,
+  5: $sp-5,
+  6: $sp-6,
+  7: $sp-7,
+  -1: - $sp-1,
+  -2: - $sp-2,
+  -3: - $sp-3,
+  -4: - $sp-4,
+  -5: - $sp-5,
+  -6: - $sp-6,
+  -7: - $sp-7,
+);
+
+
+// SPACE
+// ---------------------------------------------------------------------------
+
+// inset
+.p-0 {
+    padding: 0;
+}
+@each $name, $sp in $map-space {
+    .p-#{$name} { padding: $sp; }
+}
+
+@include for-small {
+    .p-0-sm {
+        padding: 0;
+    }
+    @each $name, $sp in $map-space {
+        .p-#{$name}-sm { padding: $sp; }
+    }
+}
+@include for-medium {
+    .p-0-md {
+        padding: 0;
+    }
+    @each $name, $sp in $map-space {
+        .p-#{$name}-md { padding: $sp; }
+    }
+}
+
+
+
+// inset x
+.p-x0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+@each $name, $sp in $map-space {
+    .p-x#{$name} { padding-left: $sp; padding-right: $sp; }
+}
+@include for-small {
+    .p-x0-sm {
+        padding-left: 0; padding-right: 0;
+    }
+    @each $name, $sp in $map-space {
+        .p-x#{$name}-sm { padding-left: $sp; padding-right: $sp; }
+    }
+}
+@include for-medium {
+    .p-x0-md {
+        padding-left: 0; padding-right: 0;
+    }
+    @each $name, $sp in $map-space {
+        .p-x#{$name}-md { padding-left: $sp; padding-right: $sp; }
+    }
+}
+
+
+
+// inset y
+.p-y0 {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+@each $name, $sp in $map-space {
+    .p-y#{$name} { padding-top: $sp; padding-bottom: $sp; }
+}
+@include for-small {
+    .p-y0-sm {
+        padding-top: 0; padding-bottom: 0;
+    }
+    @each $name, $sp in $map-space {
+        .p-y#{$name}-sm { padding-top: $sp; padding-bottom: $sp; }
+    }
+}
+@include for-medium {
+    .p-y0-md {
+        padding-top: 0; padding-bottom: 0;
+    }
+    @each $name, $sp in $map-space {
+        .p-y#{$name}-md { padding-top: $sp; padding-bottom: $sp; }
+    }
+}
+
+
+
+
+// inset top
+.p-t0 {
+    padding-top: 0;
+}
+@each $name, $sp in $map-space {
+  .p-t#{$name} { padding-top: $sp; }
+}
+@include for-small {
+    .p-t0-sm {
+        padding-top: 0;
+    }
+    @each $name, $sp in $map-space {
+        .p-t#{$name}-sm { padding-top: $sp; }
+    }
+}
+@include for-medium {
+    .p-t0-md {
+        padding-top: 0;
+    }
+    @each $name, $sp in $map-space {
+        .p-t#{$name}-md { padding-top: $sp; }
+    }
+}
+
+
+
+// inset bottom
+.p-b0 {
+    padding-bottom: 0;
+}
+@each $name, $sp in $map-space {
+  .p-b#{$name} { padding-bottom: $sp; }
+}
+@include for-small {
+    .p-b0-sm {
+        padding-bottom: 0;
+    }
+    @each $name, $sp in $map-space {
+        .p-b#{$name}-sm { padding-bottom: $sp; }
+    }
+}
+@include for-medium {
+    .p-b0-md {
+        padding-bottom: 0;
+    }
+    @each $name, $sp in $map-space {
+        .p-b#{$name}-md { padding-bottom: $sp; }
+    }
+}
+
+
+
+// inset left
+.p-l0 {
+    padding-left: 0;
+}
+@each $name, $sp in $map-space {
+  .p-l#{$name} { padding-left: $sp; }
+}
+@include for-small {
+    .p-l0-sm {
+        padding-left: 0;
+    }
+    @each $name, $sp in $map-space {
+        .p-l#{$name}-sm { padding-left: $sp; }
+    }
+}
+@include for-medium {
+    .p-l0-md {
+        padding-left: 0;
+    }
+    @each $name, $sp in $map-space {
+        .p-l#{$name}-md { padding-left: $sp; }
+    }
+}
+
+
+
+// inset right
+.p-right-0 {
+    padding-right: 0;
+}
+@each $name, $sp in $map-space {
+  .p-r#{$name} { padding-right: $sp; }
+}
+@include for-small {
+    .p-r0-sm {
+        padding-right: 0;
+    }
+    @each $name, $sp in $map-space {
+        .p-right-#{$name}-sm { padding-right: $sp; }
+    }
+}
+@include for-medium {
+    .p-r0-md {
+        padding-right: 0;
+    }
+    @each $name, $sp in $map-space {
+        .p-right-#{$name}-md { padding-right: $sp; }
+    }
+}
+
+
+
+// outset
+.m-0 {
+    margin: 0;
+}
+@each $name, $sp in $map-space {
+  .mr#{$name} { margin: $sp; }
+}
+@include for-small {
+    .m-0-sm {
+        margin: 0;
+    }
+    @each $name, $sp in $map-space {
+        .mr#{$name}-sm { margin: $sp; }
+    }
+}
+@include for-medium {
+    .m-0-md {
+        margin: 0;
+    }
+    @each $name, $sp in $map-space {
+        .mr#{$name}-md { margin: $sp; }
+    }
+}
+
+
+
+// outset x
+.m-x0 {
+    margin-left: 0; margin-right: 0;
+}
+@each $name, $sp in $map-space {
+  .m-x#{$name} { margin-left: $sp; margin-right: $sp; }
+}
+@include for-small {
+    .m-x0-sm {
+        margin-left: 0; margin-right: 0;
+    }
+    @each $name, $sp in $map-space {
+        .m-x#{$name}-sm { margin-left: $sp; margin-right: $sp; }
+    }
+}
+@include for-medium {
+    .m-x0-md {
+        margin-left: 0; margin-right: 0;
+    }
+    @each $name, $sp in $map-space {
+        .m-x#{$name}-md { margin-left: $sp; margin-right: $sp; }
+    }
+}
+
+
+
+
+// outset y
+.m-y0 {
+    margin-top: 0; margin-bottom: 0;
+}
+@each $name, $sp in $map-space {
+  .m-y#{$name} { margin-top: $sp; margin-bottom: $sp; }
+}
+@include for-small {
+    .m-y0-sm {
+        margin-top: 0; margin-bottom: 0;
+    }
+    @each $name, $sp in $map-space {
+        .m-y#{$name}-sm { margin-top: $sp; margin-bottom: $sp; }
+    }
+}
+@include for-medium {
+    .m-y0-md {
+        margin-top: 0; margin-bottom: 0;
+    }
+    @each $name, $sp in $map-space {
+        .m-y#{$name}-md { margin-top: $sp; margin-bottom: $sp; }
+    }
+}
+
+
+
+// outset top
+.m-t0 {
+    margin-top: 0;
+}
+@each $name, $sp in $map-space {
+  .m-t#{$name} { margin-top: $sp;}
+}
+@include for-small {
+    .m-t0-sm {
+        margin-top: 0;
+    }
+    @each $name, $sp in $map-space {
+        .m-t#{$name}-sm { margin-top: $sp; }
+    }
+}
+@include for-medium {
+    .m-t0-md {
+        margin-top: 0;
+    }
+    @each $name, $sp in $map-space {
+        .m-t#{$name}-md { margin-top: $sp; }
+    }
+}
+
+
+
+
+// outset bottom
+.m-b0 {
+    margin-bottom: 0;
+}
+@each $name, $sp in $map-space {
+  .m-b#{$name} { margin-bottom: $sp;}
+}
+@include for-small {
+    .m-b0-sm {
+        margin-bottom: 0;
+    }
+    @each $name, $sp in $map-space {
+        .m-b#{$name}-sm { margin-bottom: $sp; }
+    }
+}
+@include for-medium {
+    .m-b0-md {
+        margin-bottom: 0;
+    }
+    @each $name, $sp in $map-space {
+        .m-b#{$name}-md { margin-bottom: $sp; }
+    }
+}
+
+
+
+// outset left
+.m-l0 {
+    margin-left: 0;
+}
+@each $name, $sp in $map-space {
+  .m-l#{$name} { margin-left: $sp;}
+}
+@include for-small {
+    .m-l0-sm {
+        margin-left: 0;
+    }
+    @each $name, $sp in $map-space {
+        .m-l#{$name}-sm { margin-left: $sp; }
+    }
+}
+@include for-medium {
+    .m-l0-md {
+        margin-left: 0;
+    }
+    @each $name, $sp in $map-space {
+        .m-l#{$name}-md { margin-left: $sp; }
+    }
+}
+
+
+// outset right
+.m-r0 {
+    margin-right: 0;
+}
+@each $name, $sp in $map-space {
+  .m-r#{$name} { margin-right: $sp;}
+}
+@include for-small {
+    .m-r0-sm {
+        margin-right: 0;
+    }
+    @each $name, $sp in $map-space {
+        .m-r#{$name}-sm { margin-right: $sp; }
+    }
+}
+@include for-medium {
+    .m-r0-md {
+        margin-right: 0;
+    }
+    @each $name, $sp in $map-space {
+        .m-r#{$name}-md { margin-right: $sp; }
+    }
+}
+
+

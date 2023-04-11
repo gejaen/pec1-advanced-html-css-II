@@ -1,0 +1,55 @@
+
+@use "sass:color";
+
+//colors general
+$color-main: #8ce2b6;
+$color-secondary: #7388ff;
+$color-light:#ffffff;
+$color-dark:#000000;
+$color-grey:#dddddd;
+$color-grey-light:#f8f4f4;
+
+// color specific
+$color-button: $color-grey;
+$color-button-hover:color.adjust($color-grey, $lightness:-15%);
+
+// fonts
+$font-family-sans-serif : 'Inter', -apple-system, "Helvetica Neue", Arial, sans-serif;
+$font-family-serif: "Georgia", "Times New Roman", serif;
+
+// font sizes
+$font-size-base: 16px;
+
+//space units
+$sp-1 : 0.25rem;
+$sp-2 : 0.5rem;
+$sp-3 : 1rem;
+$sp-4: 2rem;
+$sp-5: 4rem;
+$sp-6: 8rem;
+$sp-7: 16rem;
+
+
+// font sizes
+$font-sz1 : 0.875rem;
+$font-sz2 : 1rem;
+$font-sz3 : 1.25rem;
+$font-sz4 : 1.5rem;
+$font-sz5 : 2.25rem;
+$font-sz6 : 3rem;
+$font-sz7 : 5rem;
+$font-sz8 : 6rem;
+
+
+$uoc-corporate: #000078;
+$uoc-masterbrand: #73edff;
+$uoc-bg: color.scale($uoc-masterbrand, $lightness: 70%);
+
+$mqMinWidth: 420px;
+
+
+// breakpoints 
+$breakpoint-sm : 767px;
+$breakpoint-md : 991px;
+$breakpoint-lg : 992px;
+

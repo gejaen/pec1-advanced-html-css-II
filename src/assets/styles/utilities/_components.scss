@@ -1,0 +1,108 @@
+@use "sass:color";
+
+/* cards */
+
+.card {
+  margin-bottom:$sp-4;
+  padding:$sp-2 $sp-5 $sp-4 $sp-5;
+
+
+  &:hover,
+  &:active {
+    background-color: $color-dark;
+    color:$color-light;
+  }
+}
+
+
+/* leaflet map */
+
+.leaflet-map {
+  height: 450px;
+  filter:grayscale(100%) invert(100%);
+
+}
+
+/* buttons */
+
+.btn {
+  border:none;
+  line-height: 1.4em;
+  padding-left:$sp-4;
+  padding-right:$sp-4;
+  font-size: 1em;
+  background-color: $color-button;
+  cursor: pointer;
+
+  &.btn-small {
+    font-size: 0.8em;
+  }
+
+  &.btn-large {
+    font-size: 1.15em;
+    line-height: 1.8em;
+    padding-left:$sp-4;
+    padding-right:$sp-4;
+  }
+
+  &:hover,
+  &:active {
+    background-color: $color-button-hover;
+  }
+
+  &.btn-main {
+    background-color: $color-main;
+  }
+
+  &.btn-main:hover,
+  &.btn-main:active
+   {
+    background-color: color.adjust($color-main, $lightness:-15%);
+  }
+
+
+}
+
+
+
+/* forms */
+
+.form-field {
+
+  padding-bottom: $sp-3;
+
+  input {
+    width:100%;
+    border:0px;
+    padding:$sp-2;
+    border-bottom:3px solid $color-main;
+    background-color: transparent;
+    font-size: $font-sz2;
+    font-family:$font-family-sans-serif;
+  }
+
+  input:focus {
+    outline: 0;
+    background-color: rgba($color-light, 0.4);
+  }
+
+  input[type="text"] {
+    width:calc(100% - $sp-2);
+
+  }
+
+  input[type="submit"] {
+    width:initial;
+
+  }
+
+  label {
+    display: none;
+  }
+
+
+
+}
+
+
+

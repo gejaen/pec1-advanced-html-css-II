@@ -1,0 +1,125 @@
+$grid-gutter: $sp-4;
+$map-grid-width:(
+  "1": 100%,
+  "1-2":50%,
+  "1-4":25%,
+  "1-3":33%,
+  "2-3":66%,
+  "1-5":20%,
+  "2-5":40%,
+  "3-5":60%,
+  "4-5":80%,
+);
+
+// set width to 100% on small screens
+$map-grid-width-sm:(
+  "1": 100%,
+  "1-2":100%,
+  "1-4":100%,
+  "1-3":100%,
+  "2-3":100%,
+  "1-5":100%,
+  "2-5":100%,
+  "3-5":100%,
+  "4-5":100%,
+);
+
+
+
+.grid {
+
+  --gutter: #{$grid-gutter};
+
+  width: calc(100% + var(--gutter));
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(-1 * var(--gutter));
+
+
+ [class*="wi-"] {
+    box-sizing: border-box;
+    margin-left:var(--gutter);
+    margin-bottom:var(--gutter);
+
+    // &.wi-1-5 { flex-basis: calc(20% - 20px); } //example output
+    @each $unit, $width in $map-grid-width {
+      &.wi-#{$unit} {
+         flex-basis: calc(#{$width} - calc( 1 * var(--gutter))); 
+        }
+    }
+  
+  }
+
+    // grid without gutter
+    &.gutter-0 {
+      --gutter: 0px;
+    }
+  
+    &.gutter-1 {
+      --gutter:  #{$grid-gutter};
+    }
+  
+    &.gutter-2 {
+      --gutter: calc(2 * #{$grid-gutter});
+    }
+  
+    &.gutter-3 {
+      --gutter: calc(3 * #{$grid-gutter});
+    }
+  
+    // grid center items
+    &.grid-center {
+      justify-content: center;
+    } 
+
+
+  @media only screen and (max-width: $breakpoint-lg) {
+    [class*="wi-"] {
+      // &.wi-lg-1-5 { flex-basis: calc(20%); } //example output
+
+      @each $unit, $width in $map-grid-width {
+         &.wi-lg-#{$unit} {
+            flex-basis: calc(#{$width} - calc( 1 * var(--gutter))); 
+           }
+       }
+    }
+  }
+
+  @media only screen and (max-width: $breakpoint-md) {
+    
+    [class*="wi-"] {
+
+      // &.wi-md-1-5 { flex-basis: calc(20%); } //example output
+      @each $unit, $width in $map-grid-width {
+        &.wi-md-#{$unit} {
+           flex-basis: calc(#{$width} - calc( 1 * var(--gutter))); 
+          }
+      }
+
+    }
+  }
+
+  @media only screen and (max-width: $breakpoint-sm) {
+    [class*="wi-"] {
+
+      @each $unit, $width in $map-grid-width-sm {
+        &.wi-#{$unit} {
+           flex-basis: calc(#{$width} - calc( 1 * var(--gutter))); 
+          }
+      }
+
+      // &.wi-sm-1-5 { flex-basis: calc(20%); } //example output
+      @each $unit, $width in $map-grid-width {
+        &.wi-sm-#{$unit} {
+           flex-basis: calc(#{$width} - calc( 1 * var(--gutter))); 
+          }
+      }
+      
+    }
+  }
+
+
+  }
+
+
+
